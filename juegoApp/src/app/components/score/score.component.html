@@ -1,0 +1,7 @@
+<div class="card text-center" >
+    <div class="card-body">
+      <h1 class="card-title">{{puntaje}}</h1>
+      <p class="card-text">Puntaje actual</p>
+      <a (click)="finalize()" [class]="buttonText==='Finalizar'?'btn btn-outline-danger':'btn btn-outline-secondary disable'">{{buttonText}} </a>
+    </div>
+  </div>

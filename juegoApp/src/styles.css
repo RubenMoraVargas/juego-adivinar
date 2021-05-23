@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~animate.css/animate.min.css";
+
+.material-icons{
+    vertical-align: middle;
+}
+ 
+.btn-width-middle{
+    min-width: 100px;
+    width: 100px;
+}
+.img-zero{
+    max-width: 0px;
+    max-height: 0px;
+}
+img-normal{
+    width: 640px;
+    height: 330px;
+    max-width: 640px;
+    max-height: 330px;
+}
