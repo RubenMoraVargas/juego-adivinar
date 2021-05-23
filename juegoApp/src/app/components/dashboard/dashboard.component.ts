@@ -3,8 +3,7 @@ import {
   EventEmitter,
   Input,
   OnInit,
-  Output,
-  SimpleChanges
+  Output
 } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +17,9 @@ export class DashboardComponent implements OnInit {
   images: string[];
   points: number[];
   isLoadAllImages = false; 
+  negativePoints=-1;
+  positivePoints=6;
+  optionsLenght=4;
   constructor() {}
 
   ngOnInit(): void {  
@@ -29,17 +31,13 @@ export class DashboardComponent implements OnInit {
     }, 2000); 
   }
   async loadImages() {
-    let urlImagen = `https://source.unsplash.com/640x330/?${this.searchTerm}`;
-    this.images = [urlImagen, urlImagen, urlImagen, urlImagen];
-    this.points = [-1, -1, -1, -1];
-
-    const random = Math.floor(Math.random() * 4);
-    this.points[random] = 4;
-
-    // TODO:eliminar esta linea luego de probar
-    this.images[random] = 'https://source.unsplash.com/640x330/?random';
+    let urlImagen = `https://source.unsplash.com/640x330/?${this.searchTerm}`; 
+    this.images =new Array(this.optionsLenght).fill(urlImagen);
+    this.points =new Array(this.optionsLenght).fill(this.negativePoints);
+    const random = Math.floor(Math.random() * this.optionsLenght);
+    this.points[random] = this.positivePoints; 
   }
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.isLoadAllImages=false;
     this.loadImages();
   }

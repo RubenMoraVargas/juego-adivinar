@@ -17,8 +17,7 @@ export class MainComponent implements OnInit {
   restartScore(){ 
     this.scoreService.restartScore();
   }
-  refreshScore($event:number) { 
-    //  this.score=this.score+$event; 
+  refreshScore($event:number) {  
     this.scoreService.addPointsToScore($event);
   }
   setSearchTerm(newTerm:string){

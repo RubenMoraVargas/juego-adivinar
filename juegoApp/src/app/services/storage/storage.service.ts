@@ -16,10 +16,4 @@ export class StorageService {
   public setPuntaje(puntaje: number) {
     localStorage.setItem('puntaje', puntaje.toString());
   }
-  public getNombreJugador() {
-    return localStorage.getItem('nombre-jugador');
-  }
-  public setNombreJugador(nombreJugador: string) {
-    localStorage.setItem('nombre-jugador', nombreJugador);
-  }
-}
+} 
